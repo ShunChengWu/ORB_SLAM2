@@ -115,8 +115,12 @@ public:
 
     void Reset();
 
+    void Run();
+    
 protected:
-
+    std::string StrSettingPath;
+    int Sensor;
+    
     // Main tracking function. It is independent of the input sensor.
     void Track();
 
@@ -143,6 +147,8 @@ protected:
 
     bool NeedNewKeyFrame();
     void CreateNewKeyFrame();
+    
+    
 
     // In case of performing only localization, this flag is true when there are no matches to
     // points in the map. Still tracking will continue if there are enough matches with temporal points.

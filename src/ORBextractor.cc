@@ -53,11 +53,13 @@
 *
 */
 
-
-#include <opencv2/core/core.hpp>
-#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/opencv.hpp>
+//#include <opencv2/core.hpp>
+//#include <opencv2/highgui.hpp>
 #include <opencv2/features2d/features2d.hpp>
-#include <opencv2/imgproc/imgproc.hpp>
+
+
+#include <opencv2/imgproc.hpp>
 #include <vector>
 
 #include "ORBextractor.h"
@@ -1002,8 +1004,8 @@ void ORBextractor::ComputeKeyPointsOld(std::vector<std::vector<KeyPoint> > &allK
         {
             for(int j=0; j<levelCols; j++)
             {
-                vector<KeyPoint> &keysCell = cellKeyPoints[i][j];
-                KeyPointsFilter::retainBest(keysCell,nToRetain[i][j]);
+                std::vector<KeyPoint> &keysCell = cellKeyPoints[i][j];
+                cv::KeyPointsFilter::retainBest(keysCell,nToRetain[i][j]);
                 if((int)keysCell.size()>nToRetain[i][j])
                     keysCell.resize(nToRetain[i][j]);
 
@@ -1021,7 +1023,7 @@ void ORBextractor::ComputeKeyPointsOld(std::vector<std::vector<KeyPoint> > &allK
 
         if((int)keypoints.size()>nDesiredFeatures)
         {
-            KeyPointsFilter::retainBest(keypoints,nDesiredFeatures);
+            cv::KeyPointsFilter::retainBest(keypoints,nDesiredFeatures);
             keypoints.resize(nDesiredFeatures);
         }
     }
