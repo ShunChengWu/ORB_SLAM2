@@ -125,13 +125,6 @@ This will create **libORB_SLAM2.so**  at *lib* folder and the executables **mono
 
 # 5. Stereo Examples
 
-## LIVE CAMERA
-1. pass 'live' to argv[3] (argument 4th) to enable live mode. 
- (e.g. ./live_cam path/to/executable/live_cam path/to/vocab.txt path/to/live_cam.yaml live
-(optional, if your system unable to initialise in good enviromental condition, or you want to use the true your own camera parameters) 
-2. change camera parameter in /Example/live_cam/live_cam.yaml
-3. change the camera width and height in /Example/live_cam/live_cam.cpp
-
 ## KITTI Dataset
 
 1. Download the dataset (grayscale images) from http://www.cvlibs.net/datasets/kitti/eval_odometry.php 
@@ -187,6 +180,16 @@ This will create **libORB_SLAM2.so**  at *lib* folder and the executables **mono
   ./build_ros.sh
   ```
   
+# 8. LIVE CAMERA Example
+
+1. pass 'live' to argv[3] (argument 4th) to enable live mode. 
+(e.g. ./live_cam path/to/executable/live_cam path/to/vocab.txt path/to/live_cam.yaml live
+(optional, if your system unable to initialise in good enviromental condition, or you want to use the true your own camera parameters) 
+2. change camera parameter in /Example/live_cam/live_cam.yaml
+3. change the camera width and height in /Example/live_cam/live_cam.cpp
+
+
+
 ### Running Monocular Node
 For a monocular input from topic `/camera/image_raw` run node ORB_SLAM2/Mono. You will need to provide the vocabulary file and a settings file. See the monocular examples above.
 
