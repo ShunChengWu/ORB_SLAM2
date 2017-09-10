@@ -114,3 +114,11 @@ add_executable(mono_euroc
 Examples/Monocular/mono_euroc.cc)
 target_link_libraries(mono_euroc ${PROJECT_NAME})
 
+
+# Live_cam 
+include_directories(${PROJECT_SOURCE_DIR}/Examples/Live_cam)
+add_executable(live_cam
+Examples/Live_cam/live_cam.cpp Examples/Live_cam/live_cam.hpp)
+target_link_libraries(live_cam ${PROJECT_NAME})
+
+
